@@ -9,7 +9,7 @@ const createNotify = () => {
         icon: 'icons/Luffys-flag.256.png',
         sound: true,
         wait: true,
-        open: 'https://lupiteam.net/comics/one-piece'
+        open: 'https://lupiteam.net/comics/one-piece' // NOT WORKING
     });
 }
 
