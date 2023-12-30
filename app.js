@@ -12,7 +12,7 @@ const createNotify = () => {
         wait: true
     });
 
-    notifier.on('click', function (notifierObject, options, event) {
+    notifier.on('click', () => {
        exec('start https://lupiteam.net/comics/one-piece');
     });
 }
