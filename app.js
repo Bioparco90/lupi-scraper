@@ -1,6 +1,7 @@
 import { launch } from 'puppeteer';
 import { writeFile, readFileSync } from 'fs';
 import notifier from 'node-notifier';
+import open from 'open';
 
 const createNotify = () => {
     notifier.notify({
@@ -8,8 +9,11 @@ const createNotify = () => {
         message: 'A new chapter has been uploaded',
         icon: 'icons/Luffys-flag.256.png',
         sound: true,
-        wait: true,
-        open: 'https://lupiteam.net/comics/one-piece' // NOT WORKING
+        wait: true
+    });
+
+    notifier.on('click', async function (notifierObject, options, event) {
+       await open('https://lupiteam.net/comics/one-piece', {app: "google chrome"});
     });
 }
 
