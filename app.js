@@ -1,7 +1,7 @@
 import { launch } from 'puppeteer';
 import { writeFile, readFileSync } from 'fs';
 import notifier from 'node-notifier';
-import open from 'open';
+import { exec } from 'child_process';
 
 const createNotify = () => {
     notifier.notify({
@@ -12,8 +12,8 @@ const createNotify = () => {
         wait: true
     });
 
-    notifier.on('click', async function (notifierObject, options, event) {
-       await open('https://lupiteam.net/comics/one-piece', {app: "default"});
+    notifier.on('click', function (notifierObject, options, event) {
+       exec('start https://lupiteam.net/comics/one-piece');
     });
 }
 
