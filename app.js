@@ -13,7 +13,7 @@ const createNotify = () => {
     });
 
     notifier.on('click', async function (notifierObject, options, event) {
-       await open('https://lupiteam.net/comics/one-piece', {app: "google chrome"});
+       await open('https://lupiteam.net/comics/one-piece', {app: "default"});
     });
 }
 
